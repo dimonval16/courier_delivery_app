@@ -1,6 +1,6 @@
 export const initialData = {
     authorization: {
-        status: true
+        status: false
     },
     user: {
         name: 'Dimas'
