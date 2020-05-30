@@ -2,21 +2,23 @@ import React from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const LoginCustomButton = withStyles({
+const CustomButton = withStyles({
     root: {
         borderRadius: 30,
         height: 56
     }
 })(Button);
 
-export default function MainButton(props) {
+export default function MainButton({title, color, type, disabled, onClick}) {
     return (
-        <LoginCustomButton
+        <CustomButton
             variant={'contained'}
-            color={'primary'}
-            type={'submit'}
+            color={color}
+            type={type}
+            disabled={disabled}
+            onClick={onClick}
         >
-            {props.title}
-        </LoginCustomButton>
+            {title}
+        </CustomButton>
     );
 }

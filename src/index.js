@@ -14,6 +14,7 @@ const mainTheme = createMuiTheme({
             main: orange[800],
         },
         secondary: {
+            light: orange[100],
             main: orange[300],
             contrastText: 'white'
         }

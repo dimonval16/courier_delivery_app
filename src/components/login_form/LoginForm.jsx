@@ -30,6 +30,8 @@ export default function LoginForm(props) {
             />
             <MainButton
                 title={'Войти'}
+                color={'primary'}
+                type={'submit'}
             />
         </form>
     );

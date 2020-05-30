@@ -19,31 +19,31 @@ const useStyles = makeStyles({
 });
 
 export default function SideDrawer(props) {
-    const classes = useStyles();
-
-    const list = () => (
-        <div className={classes.list} role={'presentation'}>
-            <div className={classes.user}>
-                {`Привет, ${props.username}`}
-            </div>
-            <Divider/>
-            <List>
-                {props.items.map((item, index) => (
-                    <ListItem button key={index} onClick={() => props.onLogOut(item.title)}>
-                        <ListItemIcon>
-                            <CustomIcon icon={item.icon}/>
-                        </ListItemIcon>
-                        <ListItemText primary={item.title}/>
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
+    const s = useStyles();
 
     return (
         <>
             <Drawer open={props.open} onClose={props.onToggleDrawer}>
-                {list()}
+                <div className={s.list} role={'presentation'}>
+                    <div className={s.user}>
+                        {`Привет, ${props.username}`}
+                    </div>
+                    <Divider/>
+                    <List>
+                        {props.items.map((item, index) => (
+                            <ListItem
+                                button
+                                key={index}
+                                onClick={() => props.onLogOut(item.title)}
+                            >
+                                <ListItemIcon>
+                                    <CustomIcon icon={item.icon}/>
+                                </ListItemIcon>
+                                <ListItemText primary={item.title}/>
+                            </ListItem>
+                        ))}
+                    </List>
+                </div>
             </Drawer>
         </>
     );

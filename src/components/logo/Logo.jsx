@@ -10,9 +10,9 @@ const useStyles = makeStyles({
 });
 
 export default function Logo() {
-    const classes = useStyles();
+    const s = useStyles();
 
     return (
-        <img className={classes.root} src={logoImg} width={165} alt={'orno'}/>
+        <img className={s.root} src={logoImg} width={165} alt={'orno'}/>
     );
 }

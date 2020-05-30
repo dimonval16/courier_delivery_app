@@ -1,9 +1,9 @@
+import courier from './courierData/courier';
+
 export const initialData = {
     authorization: {
-        status: false
-    },
-    user: {
-        name: 'Dimas'
+        status: true,
+        isSessionActive: false
     },
     sideDrawer: {
         items: [
@@ -12,5 +12,6 @@ export const initialData = {
             { title: 'Архив', icon: 'archive' },
             { title: 'Выйти', icon: 'exit_to_app' }
         ]
-    }
+    },
+    user: courier
 }

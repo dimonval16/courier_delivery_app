@@ -1,14 +1,17 @@
-import React, {useState} from "react";
-import {connect} from 'react-redux';
-import {logOutAC} from '../../redux/actions/mainA';
+import React, {useState} from 'react';
 import s from './StartEnd.module.css';
 import HeaderMain from '../../components/headers/HeaderMain';
+import SideDrawer from '../../components/side_drawer/SideDrawer';
 import Logo from '../../components/logo/Logo';
 import MainButton from '../../components/buttons/MainButton';
-import SideDrawer from '../../components/side_drawer/SideDrawer';
 
-function StartEndComponent({drawerItems, username, onLogOut}) {
+export default function StartEnd(props) {
     const [values, setValues] = useState({isDrawerOpened: false});
+
+    const handleFinishButton = () => {
+        props.onFinishSession();
+        props.history.push('/courier/history');
+    }
 
     return (
         <div className={s.wrapper}>
@@ -17,34 +20,28 @@ function StartEndComponent({drawerItems, username, onLogOut}) {
                 onButtonClick={() => setValues({...values, isDrawerOpened: true})}
             />
             <SideDrawer
-                items={drawerItems}
-                username={username}
+                items={props.drawerItems}
+                username={props.userName}
                 open={values.isDrawerOpened}
                 onToggleDrawer={() => setValues({...values, isDrawerOpened: false})}
-                onLogOut={title => title === 'Выйти' ? onLogOut() : null}
+                onLogOut={title => title === 'Выйти' ? props.onLogOut() : null}
             />
             <div className={s.content}>
                 <Logo/>
                 <div className={s.buttons}>
-                    <MainButton title={'Старт'}/>
-                    <MainButton title={'Финиш'}/>
+                    <MainButton
+                        title={props.isSessionActive ? 'Продолжить' : 'Старт'}
+                        color={'primary'}
+                        onClick={props.onStartSession}
+                    />
+                    <MainButton
+                        title={'Финиш'}
+                        color={'primary'}
+                        disabled={!props.isSessionActive}
+                        onClick={handleFinishButton}
+                    />
                 </div>
             </div>
         </div>
     );
 }
-
-function mapStateToProps(state) {
-    return {
-        drawerItems: state.sideDrawer.items,
-        username: state.user.name
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        onLogOut: () => dispatch(logOutAC())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StartEndComponent);
