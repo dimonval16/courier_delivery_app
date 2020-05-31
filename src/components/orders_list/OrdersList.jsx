@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {withRouter} from 'react-router';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -13,8 +14,24 @@ const useStyles = makeStyles({
     }
 });
 
-export default function OrdersList(props) {
+function OrdersList(props) {
     const s = useStyles();
+
+    const deliveryId = props.deliveryPage.deliveryId;
+
+    useEffect(() => {
+        if (deliveryId) props.history.push(`/courier/order${deliveryId}`);
+    }, [deliveryId, props.history]);
+
+    const handleButtonClick = (del) => {
+        const data = {
+            deliveryId: del.deliveryId,
+            userAddress: del.userAddress,
+            userName: del.userName
+        }
+
+        props.onWatchDelivery(data);
+    }
 
     return (
         <List className={s.root}>
@@ -25,7 +42,7 @@ export default function OrdersList(props) {
                             primary={del.userAddress}
                             secondary={`${del.price} грн. - 11:23`}
                         />
-                        <Button color={'primary'}>
+                        <Button color={'primary'} onClick={() => handleButtonClick(del)}>
                             смотреть
                         </Button>
                     </ListItem>
@@ -35,3 +52,5 @@ export default function OrdersList(props) {
         </List>
     );
 }
+
+export default withRouter(OrdersList);

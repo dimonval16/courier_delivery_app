@@ -11,8 +11,10 @@ const courier = {
     Editing: '2020-01-25T18:00',
     typePartners: 'driver',
     dateOfRegistration: '2020-04-20',
+    isSessionActive: false,
     sessions: [
         {
+            sessionId: 1,
             start: '2020-05-22T10:00',
             endOfSession: '2020-05-22T21:30',
             deliveries,

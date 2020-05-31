@@ -8,7 +8,7 @@ function mapStateToProps(state) {
     return {
         drawerItems: state.sideDrawer.items,
         userName: state.user.name,
-        isSessionActive: state.authorization.isSessionActive
+        isSessionActive: state.user.isSessionActive
     }
 }
 

@@ -3,7 +3,6 @@ import courier from './courierData/courier';
 export const initialData = {
     authorization: {
         status: true,
-        isSessionActive: false
     },
     sideDrawer: {
         items: [
@@ -13,5 +12,10 @@ export const initialData = {
             { title: 'Выйти', icon: 'exit_to_app' }
         ]
     },
-    user: courier
+    user: courier,
+    deliveryPage: {
+        deliveryId: '',
+        address: '',
+        userName: ''
+    }
 }

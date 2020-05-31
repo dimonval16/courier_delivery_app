@@ -1,5 +1,6 @@
 const finishedDeliveries = [
     {
+        deliveryId: 1,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -24,11 +25,13 @@ const finishedDeliveries = [
                 keywords: ['салати'],
                 weight: 275,
                 stopList: false,
-            }],
+            }
+        ],
         price: 1150,
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 2,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -58,6 +61,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 3,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -87,6 +91,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 4,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -116,6 +121,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 5,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -145,6 +151,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 6,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -174,6 +181,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 7,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -203,6 +211,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 8,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -232,6 +241,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 9,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -261,6 +271,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 10,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -290,6 +301,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 11,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
@@ -319,6 +331,7 @@ const finishedDeliveries = [
         orderData: '25-05-2020T15:00'
     },
     {
+        deliveryId: 12,
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,

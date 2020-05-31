@@ -2,11 +2,13 @@ import {combineReducers} from "redux";
 import authorization from './authorizationR/authorizationR';
 import sideDrawer from './sideDrawerR/sideDrawerR';
 import user from './userR/userR';
+import deliveryPage from './deliveryPageR/deliveryPageR';
 
 const reducer = combineReducers({
     authorization,
     sideDrawer,
-    user
+    user,
+    deliveryPage
 });
 
 export default reducer;

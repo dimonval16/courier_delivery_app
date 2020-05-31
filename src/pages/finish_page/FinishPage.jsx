@@ -20,8 +20,12 @@ export default function FinishPage(props) {
                 anotherIcon={'arrow_back_ios'}
                 onButtonClick={() => props.history.push('/courier/main')}
             />
-            <OrdersList deliveries={props.finishedDeliveries}/>
+            <OrdersList
+                deliveries={props.finishedDeliveries}
+                deliveryPage={props.deliveryPage}
+                onWatchDelivery={props.onWatchDelivery}
+            />
             <Footer balance={props.balance}/>
         </div>
     );
-}
+}   
