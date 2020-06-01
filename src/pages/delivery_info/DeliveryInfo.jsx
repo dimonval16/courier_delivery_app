@@ -1,9 +1,10 @@
 import React from 'react';
 import HeaderMain from '../../components/headers/HeaderMain';
+import DeliveryCard from "../../components/delivery_card/DeliveryCard";
 
 export default function DeliveryInfo({deliveryPage, ...props}) {
     const getSessionDate = () => {
-        const finishData = props.lastSession.endOfSession;
+        const finishData = deliveryPage.orderData;
         const day = finishData.slice(8, 10);
         const month = finishData.slice(5, 7);
         const year = finishData.slice(2, 4);
@@ -22,6 +23,9 @@ export default function DeliveryInfo({deliveryPage, ...props}) {
                 rightTitle={getSessionDate()}
                 anotherIcon={'arrow_back_ios'}
                 onButtonClick={handleButtonClick}
+            />
+            <DeliveryCard
+                del={deliveryPage}
             />
         </>
     );

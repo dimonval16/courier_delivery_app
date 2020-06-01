@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer';
 
 export default function FinishPage(props) {
     const getSessionDate = () => {
-        const finishData = props.lastSession.endOfSession;
+        const finishData = props.lastSessionDate;
         const day = finishData.slice(8, 10);
         const month = finishData.slice(5, 7);
         const year = finishData.slice(2, 4);
@@ -22,7 +22,7 @@ export default function FinishPage(props) {
             />
             <OrdersList
                 deliveries={props.finishedDeliveries}
-                deliveryPage={props.deliveryPage}
+                deliveryPageId={props.deliveryPageId}
                 onWatchDelivery={props.onWatchDelivery}
             />
             <Footer balance={props.balance}/>

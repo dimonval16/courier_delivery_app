@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {useEffect} from 'react';
 import {withRouter} from 'react-router';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles({
     root: {
@@ -16,22 +16,11 @@ const useStyles = makeStyles({
 
 function OrdersList(props) {
     const s = useStyles();
-
-    const deliveryId = props.deliveryPage.deliveryId;
+    const deliveryId = props.deliveryPageId;
 
     useEffect(() => {
         if (deliveryId) props.history.push(`/courier/order${deliveryId}`);
     }, [deliveryId, props.history]);
-
-    const handleButtonClick = (del) => {
-        const data = {
-            deliveryId: del.deliveryId,
-            userAddress: del.userAddress,
-            userName: del.userName
-        }
-
-        props.onWatchDelivery(data);
-    }
 
     return (
         <List className={s.root}>
@@ -40,9 +29,9 @@ function OrdersList(props) {
                     <ListItem>
                         <ListItemText
                             primary={del.userAddress}
-                            secondary={`${del.price} грн. - 11:23`}
+                            secondary={`${del.price} грн. - ${del.deliveryData.slice(11, 16)}`}
                         />
-                        <Button color={'primary'} onClick={() => handleButtonClick(del)}>
+                        <Button color={'primary'} onClick={() => props.onWatchDelivery(del)}>
                             смотреть
                         </Button>
                     </ListItem>

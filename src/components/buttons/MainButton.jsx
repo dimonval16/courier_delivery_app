@@ -9,9 +9,10 @@ const CustomButton = withStyles({
     }
 })(Button);
 
-export default function MainButton({title, color, type, disabled, onClick}) {
+export default function MainButton({title, color, type, disabled, onClick, ...props}) {
     return (
         <CustomButton
+            className={props.className}
             variant={'contained'}
             color={color}
             type={type}

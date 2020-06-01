@@ -6,10 +6,10 @@ import {setDeliveryContentAC} from '../../redux/actions/mainA';
 
 function mapStateToProps(state) {
     return {
-        lastSession: state.user.sessions[0],
+        lastSessionDate: state.user.sessions[0].endOfSession,
         finishedDeliveries: state.user.sessions[0].finishedDeliveries,
         balance: state.user.balance,
-        deliveryPage: state.deliveryPage
+        deliveryPageId: state.deliveryPage.deliveryId
     }
 }
 

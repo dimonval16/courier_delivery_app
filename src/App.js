@@ -37,7 +37,7 @@ function AppComponent({isAuth, history, deliveryPage}) {
     );
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
         isAuth: state.authorization.status,
         deliveryPage: state.deliveryPage

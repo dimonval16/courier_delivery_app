@@ -5,8 +5,7 @@ import {clearDeliveryInfoAC} from '../../redux/actions/mainA';
 
 function mapStateToProps(state) {
     return {
-        deliveryPage: state.deliveryPage,
-        lastSession: state.user.sessions[0]
+        deliveryPage: state.deliveryPage
     }
 }
 

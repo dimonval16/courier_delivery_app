@@ -14,8 +14,18 @@ export const initialData = {
     },
     user: courier,
     deliveryPage: {
+        PerformedByAPartner: false,
+        DeliveredBy: false,
+        payment: false,
         deliveryId: '',
-        address: '',
-        userName: ''
+        userAddress: '',
+        userName: '',
+        userPhone: '',
+        userComment: '',
+        price: '',
+        orderData: '',
+        partnerName: '',
+        partnerAddress: '',
+        orders: []
     }
 }

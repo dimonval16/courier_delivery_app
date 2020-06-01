@@ -15,8 +15,8 @@ const courier = {
     sessions: [
         {
             sessionId: 1,
-            start: '2020-05-22T10:00',
-            endOfSession: '2020-05-22T21:30',
+            start: '2020-05-25T10:00',
+            endOfSession: '2020-05-25T21:30',
             deliveries,
             activeDeliveries,
             finishedDeliveries
