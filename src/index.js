@@ -6,7 +6,7 @@ import store from "./redux/store/store";
 import './index.css';
 import App from './App';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {orange} from "@material-ui/core/colors";
+import {orange, red, green} from '@material-ui/core/colors';
 
 const mainTheme = createMuiTheme({
     palette: {
@@ -17,6 +17,12 @@ const mainTheme = createMuiTheme({
             light: orange[100],
             main: orange[300],
             contrastText: 'white'
+        },
+        error: {
+            main: red[300]
+        },
+        good: {
+            main: green[800]
         }
     }
 });

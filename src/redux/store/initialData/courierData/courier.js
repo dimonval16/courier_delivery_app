@@ -1,9 +1,9 @@
-import deliveries from './deliveries/deliveries';
+import allDeliveries from './deliveries/allDeliveries';
 import activeDeliveries from './deliveries/activeDeliveries';
 import finishedDeliveries from './deliveries/finishedDeliveries';
 
 const courier = {
-    name: 'Dimas',
+    name: 'Дмитрий',
     lastName: 'Иванов',
     patronymic: 'Олександрович',
     city: 'Шепетівка',
@@ -15,9 +15,9 @@ const courier = {
     sessions: [
         {
             sessionId: 1,
-            start: '2020-05-25T10:00',
+            startOfSession: '2020-05-25T10:00',
             endOfSession: '2020-05-25T21:30',
-            deliveries,
+            allDeliveries,
             activeDeliveries,
             finishedDeliveries
         }

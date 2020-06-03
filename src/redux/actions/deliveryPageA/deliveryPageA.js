@@ -7,23 +7,26 @@ export const clearDeliveryInfoAC = () => {
     }
 }
 
-export const setDeliveryContentAC = data => {
+export const setDeliveryContentAC = (del, use) => {
     return {
         type: SET_DELIVERY_CONTENT,
-        PerformedByAPartner: data.PerformedByAPartner,
-        DeliveredBy: data.DeliveredBy,
-        payment: data.payment,
-        deliveryId: data.deliveryId,
-        userAddress: data.userAddress,
-        userName: data.userName,
-        userPhone: data.userPhone,
-        userComment: data.userComment,
-        price: data.price,
-        orderData: data.orderData,
-        deliveryTime: data.deliveryTime,
-        deliveryData: data.deliveryData,
-        partnerName: data.partnerName,
-        partnerAddress: data.partnerAddress,
-        orders: data.orders
+        PerformedByAPartner: del.PerformedByAPartner,
+        DeliveredBy: del.DeliveredBy,
+        payment: del.payment,
+        cash: del.cash,
+        paymentOnline: del.paymentOnline,
+        deliveryId: del.deliveryId,
+        userAddress: del.userAddress,
+        userName: del.userName,
+        userPhone: del.userPhone,
+        userComment: del.userComment,
+        price: del.price,
+        orderData: del.orderData,
+        deliveryTime: del.deliveryTime,
+        deliveryData: del.deliveryData,
+        partnerName: del.partnerName,
+        partnerAddress: del.partnerAddress,
+        orders: del.orders,
+        use
     }
 }

@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onWatchDelivery: data => dispatch(setDeliveryContentAC(data))
+        onWatchDelivery: (del, use) => dispatch(setDeliveryContentAC(del, use))
     }
 }
 

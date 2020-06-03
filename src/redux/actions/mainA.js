@@ -18,3 +18,8 @@ export {
     setDeliveryContentAC,
     clearDeliveryInfoAC
 } from './deliveryPageA/deliveryPageA';
+
+export {
+    SET_TAB_STATUS,
+    setTabStatusAC
+} from './workPageA/workPageA';

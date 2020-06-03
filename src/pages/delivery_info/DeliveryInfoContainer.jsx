@@ -5,7 +5,8 @@ import {clearDeliveryInfoAC} from '../../redux/actions/mainA';
 
 function mapStateToProps(state) {
     return {
-        deliveryPage: state.deliveryPage
+        deliveryPage: state.deliveryPage,
+        use: state.deliveryPage.use
     }
 }
 

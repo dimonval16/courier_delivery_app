@@ -13,7 +13,7 @@ const couriers = [
                 start: "2020-05-22T10:00",
                 endOfSession: "2020-05-22T21:30",
                 deliveries: ["информация о доставке"],
-                activeDeliveries: [
+                activDeliveries: [
                     {
                         PerformedByAPartner: false,
                         DeliveredBy: false,

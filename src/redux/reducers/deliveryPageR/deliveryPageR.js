@@ -8,6 +8,8 @@ const reducer = (state = {}, action) => {
                 PerformedByAPartner: action.PerformedByAPartner,
                 DeliveredBy: action.DeliveredBy,
                 payment: action.payment,
+                cash: action.cash,
+                paymentOnline: action.paymentOnline,
                 deliveryId: action.deliveryId,
                 userAddress: action.userAddress,
                 userName: action.userName,
@@ -19,7 +21,8 @@ const reducer = (state = {}, action) => {
                 deliveryData: action.deliveryData,
                 partnerName: action.partnerName,
                 partnerAddress: action.partnerAddress,
-                orders: action.orders
+                orders: action.orders,
+                use: action.use
             }
 
         case CLEAR_DELIVERY_INFO:
@@ -28,6 +31,8 @@ const reducer = (state = {}, action) => {
                 PerformedByAPartner: false,
                 DeliveredBy: false,
                 payment: false,
+                cash: false,
+                paymentOnline: false,
                 deliveryId: '',
                 userAddress: '',
                 userName: '',
@@ -39,7 +44,8 @@ const reducer = (state = {}, action) => {
                 deliveryData: '',
                 partnerName: '',
                 partnerAddress: '',
-                orders: []
+                orders: [],
+                use: ''
             }
 
         default:

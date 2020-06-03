@@ -6,6 +6,7 @@ import Login from './pages/login/Login';
 import StartEndContainer from './pages/start_end/StartEndContainer';
 import FinishPageContainer from './pages/finish_page/FinishPageContainer';
 import DeliveryInfoContainer from './pages/delivery_info/DeliveryInfoContainer';
+import WorkPageContainer from './pages/work_page/WorkPageContainer';
 
 const PrivateRoute = ({component: Component, isAuth, ...rest}) => {
     return (
@@ -15,7 +16,7 @@ const PrivateRoute = ({component: Component, isAuth, ...rest}) => {
     );
 };
 
-function AppComponent({isAuth, history, deliveryPage}) {
+function AppComponent({isAuth, history, deliveryPageId}) {
     useEffect(() => {
         if (isAuth) history.push('/courier/main');
     }, [isAuth, history]);
@@ -27,10 +28,11 @@ function AppComponent({isAuth, history, deliveryPage}) {
                 <PrivateRoute path={'/courier/main'} isAuth={isAuth} component={StartEndContainer}/>
                 <PrivateRoute path={'/courier/history'} isAuth={isAuth} component={FinishPageContainer}/>
                 <PrivateRoute
-                    path={`/courier/order${deliveryPage.deliveryId}`}
+                    path={`/courier/order${deliveryPageId}`}
                     isAuth={isAuth}
                     component={DeliveryInfoContainer}
                 />
+                <PrivateRoute path={'/courier/orders'} isAuth={isAuth} component={WorkPageContainer}/>
                 <Redirect exact from={'/'} to={'/courier/main'}/>
             </Switch>
         </>
@@ -40,7 +42,7 @@ function AppComponent({isAuth, history, deliveryPage}) {
 function mapStateToProps(state) {
     return {
         isAuth: state.authorization.status,
-        deliveryPage: state.deliveryPage
+        deliveryPageId: state.deliveryPage.deliveryId
     }
 }
 

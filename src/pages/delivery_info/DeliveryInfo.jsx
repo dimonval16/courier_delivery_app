@@ -4,16 +4,21 @@ import DeliveryCard from "../../components/delivery_card/DeliveryCard";
 
 export default function DeliveryInfo({deliveryPage, ...props}) {
     const getSessionDate = () => {
-        const finishData = deliveryPage.orderData;
-        const day = finishData.slice(8, 10);
-        const month = finishData.slice(5, 7);
-        const year = finishData.slice(2, 4);
+        const finishData = new Date(deliveryPage.orderData);
+        const day = finishData.getDate();
+        const month = `0${finishData.getMonth() + 1}`;
+        const year = finishData.getFullYear();
         return `${day}.${month}.${year}`;
     }
 
     const handleButtonClick = () => {
         props.onCLearDeliveryInfo();
-        props.history.push('/courier/history');
+
+        if (props.use === 'HistoryPage') {
+            props.history.push('/courier/history');
+        } else if (props.use === 'WorkPage') {
+            props.history.push('/courier/orders');
+        }
     }
 
     return (

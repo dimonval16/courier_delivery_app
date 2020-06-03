@@ -26,7 +26,7 @@ export default function SideDrawer(props) {
             <Drawer open={props.open} onClose={props.onToggleDrawer}>
                 <div className={s.list} role={'presentation'}>
                     <div className={s.user}>
-                        {`Привет, ${props.username}`}
+                        {`Привет, ${props.username}.`}
                     </div>
                     <Divider/>
                     <List>

@@ -13,6 +13,11 @@ export default function StartEnd(props) {
         props.history.push('/courier/history');
     }
 
+    const handleStartButton = () => {
+        props.onStartSession();
+        props.history.push('/courier/orders');
+    }
+
     return (
         <div className={s.wrapper}>
             <HeaderMain
@@ -32,7 +37,7 @@ export default function StartEnd(props) {
                     <MainButton
                         title={props.isSessionActive ? 'Продолжить' : 'Старт'}
                         color={'primary'}
-                        onClick={props.onStartSession}
+                        onClick={handleStartButton}
                     />
                     <MainButton
                         title={'Финиш'}

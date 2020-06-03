@@ -17,6 +17,8 @@ export const initialData = {
         PerformedByAPartner: false,
         DeliveredBy: false,
         payment: false,
+        cash: false,
+        paymentOnline: false,
         deliveryId: '',
         userAddress: '',
         userName: '',
@@ -24,8 +26,14 @@ export const initialData = {
         userComment: '',
         price: '',
         orderData: '',
+        deliveryTime: '',
+        deliveryData: '',
         partnerName: '',
         partnerAddress: '',
-        orders: []
+        orders: [],
+        use: ''
+    },
+    workPage: {
+        tabStatus: 0
     }
 }
