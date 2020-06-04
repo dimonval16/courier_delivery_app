@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderMain from '../../components/headers/HeaderMain';
 import OrdersList from '../../components/orders_list/OrdersList';
 import Footer from '../../components/footer/Footer';
@@ -13,6 +13,11 @@ export default function WorkPage(props) {
         return `${day}.${month}.${year}`;
     }
 
+    useEffect(() => {
+        props.onUpdateInfo(props.courierId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps,
+    }, [])
+
     return (
         <div>
             <HeaderMain
@@ -26,7 +31,7 @@ export default function WorkPage(props) {
                 onSetTab={props.onSetTab}
             />
             <OrdersList
-                deliveries={props.tab === 0 ? props.deliveries : props.activeDeliveries}
+                deliveries={props.tab === 0 ? props.deliveries : props.tab === 1 ? props.activeDeliveries : props.finishedDeliveries}
                 deliveryPageId={props.deliveryPageId}
                 onWatchDelivery={props.onWatchDelivery}
                 use={'WorkPage'}

@@ -1,4 +1,4 @@
-const couriers = [
+const couriersExample = [
     {
         name: "Иван",
         lastName: "Иванов",

@@ -11,6 +11,11 @@ export default function DeliveryInfo({deliveryPage, ...props}) {
         return `${day}.${month}.${year}`;
     }
 
+    const handleOrderClick = (title) => {
+        if (title === 'Принять') props.onStartOrder(props.courierId, deliveryPage.deliveryId);
+        else if (title === 'Завершить') props.onFinishOrder(props.courierId, deliveryPage.deliveryId);
+    }
+
     const handleButtonClick = () => {
         props.onCLearDeliveryInfo();
 
@@ -31,6 +36,7 @@ export default function DeliveryInfo({deliveryPage, ...props}) {
             />
             <DeliveryCard
                 del={deliveryPage}
+                onOrderClick={handleOrderClick}
             />
         </>
     );

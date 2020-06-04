@@ -1,6 +1,6 @@
 .wrapper {
     width: 90%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     margin: auto;
     display: flex;
     flex-direction: column;

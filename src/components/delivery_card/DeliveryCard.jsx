@@ -10,7 +10,7 @@ import MainButton from '../buttons/MainButton';
 import DataList from './data_list/DataList';
 import {deliveryCardStyles} from './deliveryCardStyles';
 
-export default function DeliveryCard({del}) {
+export default function DeliveryCard({del, onOrderClick}) {
     const s = deliveryCardStyles();
     const isFinished = del.PerformedByAPartner && del.DeliveredBy && del.payment;
 
@@ -35,9 +35,10 @@ export default function DeliveryCard({del}) {
             <CardActions className={s.buttonCover}>
                 <MainButton
                     className={s.button}
-                    title={isFinished ? 'Завершено' : 'Принять'}
+                    title={isFinished ? ('Завершено') : (del.responsibleCourier ? 'Завершить' : 'Принять')}
                     disabled={isFinished}
                     color={'primary'}
+                    onClick={onOrderClick}
                 />
             </CardActions>
         </Card>

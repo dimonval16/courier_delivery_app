@@ -1,4 +1,4 @@
-const orders = [
+const ordersExample = [
     {
         PerformedByAPartner: false,
         DeliveredBy: false,

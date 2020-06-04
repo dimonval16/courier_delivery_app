@@ -13,8 +13,9 @@ export default function StartEnd(props) {
         props.history.push('/courier/history');
     }
 
-    const handleStartButton = () => {
+    const handleStartButton = (title) => {
         props.onStartSession();
+        if (title === 'Старт') props.onSetOrdersContent(props.courierId);
         props.history.push('/courier/orders');
     }
 
@@ -26,7 +27,7 @@ export default function StartEnd(props) {
             />
             <SideDrawer
                 items={props.drawerItems}
-                username={props.userName}
+                username={props.courierName}
                 open={values.isDrawerOpened}
                 onToggleDrawer={() => setValues({...values, isDrawerOpened: false})}
                 onLogOut={title => title === 'Выйти' ? props.onLogOut() : null}

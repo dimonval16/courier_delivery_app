@@ -1,4 +1,4 @@
-const users = [{
+const usersExample = [{
     name: "Ірина",
     secondName: "Вікторівна",
     userId: "user0256",

@@ -1,4 +1,4 @@
-import courier from './courierData/courier';
+import courier from './courier_data/courier';
 
 export const initialData = {
     authorization: {
@@ -20,6 +20,7 @@ export const initialData = {
         cash: false,
         paymentOnline: false,
         deliveryId: '',
+        responsibleCourier: '',
         userAddress: '',
         userName: '',
         userPhone: '',

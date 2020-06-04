@@ -17,7 +17,7 @@ export default function MainButton({title, color, type, disabled, onClick, ...pr
             color={color}
             type={type}
             disabled={disabled}
-            onClick={onClick}
+            onClick={() => {if(type !== 'submit')onClick(title)}}
         >
             {title}
         </CustomButton>

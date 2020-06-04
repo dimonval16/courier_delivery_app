@@ -1,5 +1,5 @@
 import {createStore, applyMiddleware} from 'redux';
-import {initialData} from './initialData/data';
+import {initialData} from './initial_data/data';
 import thunk from 'redux-thunk';
 import reducer from '../reducers/mainR';
 

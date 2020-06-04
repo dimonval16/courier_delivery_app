@@ -1,7 +1,3 @@
-import allDeliveries from './deliveries/allDeliveries';
-import activeDeliveries from './deliveries/activeDeliveries';
-import finishedDeliveries from './deliveries/finishedDeliveries';
-
 const courier = {
     name: 'Дмитрий',
     lastName: 'Иванов',
@@ -17,9 +13,10 @@ const courier = {
             sessionId: 1,
             startOfSession: '2020-05-25T10:00',
             endOfSession: '2020-05-25T21:30',
-            allDeliveries,
-            activeDeliveries,
-            finishedDeliveries
+            deliveriesData: [],
+            allDeliveries: [],
+            activeDeliveries: [],
+            finishedDeliveries: []
         }
     ],
     balance: '125',
@@ -28,7 +25,7 @@ const courier = {
     active: true,
     kls: [{date: '2020-05-10', bal: '65'}, {date: '2020-05-12', bal: '85'}],
     zalDocument: 'passport',
-    id: '124510'
+    id: 1909
 }
 
 export default courier;

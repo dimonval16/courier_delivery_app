@@ -1,9 +1,9 @@
-import {combineReducers} from "redux";
-import authorization from './authorizationR/authorizationR';
-import sideDrawer from './sideDrawerR/sideDrawerR';
-import user from './userR/userR';
-import deliveryPage from './deliveryPageR/deliveryPageR';
-import workPage from './workPageR/workPageR';
+import {combineReducers} from 'redux';
+import authorization from './authorization_r/authorizationR';
+import sideDrawer from './side_drawer_r/sideDrawerR';
+import user from './user_r/userR';
+import deliveryPage from './delivery_page_r/deliveryPageR';
+import workPage from './work_page_r/workPageR';
 
 const reducer = combineReducers({
     authorization,

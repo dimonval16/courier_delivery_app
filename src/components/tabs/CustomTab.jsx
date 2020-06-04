@@ -26,8 +26,9 @@ export default function CustomTab({tab, onSetTab}) {
                 textColor={'primary'}
                 onChange={(e, newValue) => onSetTab(newValue)}
             >
-                <Tab icon={<CustomIcon icon={'directions_bike'}/>} aria-label={'bike'}/>
-                <Tab icon={<CustomIcon icon={'check_circle'}/>} aria-label='done'/>
+                <Tab icon={<CustomIcon icon={'format_list_bulleted'}/>} aria-label={'format_list_bulleted'}/>
+                <Tab icon={<CustomIcon icon={'directions_bike'}/>} aria-label='directions_bike'/>
+                <Tab icon={<CustomIcon icon={'check_circle'}/>} aria-label='check_circle'/>
             </Tabs>
         </Paper>
     );
