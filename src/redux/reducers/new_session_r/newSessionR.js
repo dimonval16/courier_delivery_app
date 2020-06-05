@@ -1,5 +1,4 @@
 import {
-    SET_ORDERS_CONTENT,
     START_NEW_ORDER,
     UPDATE_ORDERS_CONTENT,
     FINISH_ORDER
@@ -7,12 +6,6 @@ import {
 
 const reducer = (state = {}, action) => {
     switch (action.type) {
-        case SET_ORDERS_CONTENT:
-            return {
-                ...state,
-                deliveriesData: action.responseOrders
-            }
-
         case START_NEW_ORDER:
             return {
                 ...state,
@@ -41,7 +34,7 @@ const reducer = (state = {}, action) => {
                 ))
             }
 
-        case UPDATE_ORDERS_CONTENT:
+        case UPDATE_ORDERS_CONTENT: // это временное решение, позже эту функцию будет выполнять get user info
             return {
                 ...state,
                 allDeliveries:

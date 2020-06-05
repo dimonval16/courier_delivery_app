@@ -40,12 +40,23 @@ export const dataListStyles = makeStyles(theme => ({
     list: {
         marginTop: 20,
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: 24
     },
     listFirst: {
         marginTop: 7,
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: 24
+    },
+    listHid: {
+        display: 'none'
+    },
+    listInWork: {
+        color: theme.palette.good.main
+    },
+    listFinished: {
+        color: 'grey'
     },
     rightText: {
         textAlign: 'right'

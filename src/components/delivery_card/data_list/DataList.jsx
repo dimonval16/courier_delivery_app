@@ -2,6 +2,7 @@ import React from 'react';
 import {dataListStyles} from '../deliveryCardStyles';
 import CustomExpansionPanel from "../../expansion_panel/CustomExpansionPanel";
 import OrderDetails from "./OrderDetails";
+import CustomIcon from "../../custom_icon/CustomIcon";
 
 export default function DataList({del}) {
     const s = dataListStyles();
@@ -29,6 +30,7 @@ export default function DataList({del}) {
         {leftContent: 'Тип оплаты:', rightContent: del.cash ? 'Наличные' : 'Онлайн'},
         {leftContent: 'К оплате:', rightContent: `${del.price} грн`},
         {leftContent: 'Статус:', rightContent: del.payment ? 'Оплачено' : 'Не оплачено'},
+        {leftContent: 'В работе:', rightContent: <CustomIcon icon={'directions_bike'}/>},
         {leftContent: 'Комментарий:', rightContent: del.userComment ? del.userComment : '-'}
     ];
 

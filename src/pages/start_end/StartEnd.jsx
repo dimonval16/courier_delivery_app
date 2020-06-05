@@ -9,7 +9,8 @@ export default function StartEnd(props) {
     const [values, setValues] = useState({isDrawerOpened: false});
 
     const handleFinishButton = () => {
-        props.onFinishSession();
+        const date = new Date();
+        props.onFinishSession(date);
         props.history.push('/courier/history');
     }
 

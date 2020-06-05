@@ -7,8 +7,9 @@ export const startSessionAC = () => {
     }
 }
 
-export const finishSessionAC = () => {
+export const finishSessionAC = finishData => {
     return {
-        type: FINISH_SESSION
+        type: FINISH_SESSION,
+        finishData
     }
 }

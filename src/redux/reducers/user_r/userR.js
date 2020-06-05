@@ -19,17 +19,27 @@ const reducer = (state = {}, action) => {
         case FINISH_SESSION:
             return {
                 ...state,
-                isSessionActive: false
+                isSessionActive: false,
+                sessions:
+                    state.sessions.map((session, index) => (
+                        index === 0 ?
+                            {...session, endOfSession: action.finishData} : session
+                    ))
             }
 
         case SET_ORDERS_CONTENT:
+            const date = new Date();
             return {
                 ...state,
-                sessions:
-                    state.sessions.map((
-                        session, index) => (index === 0 ?
-                        handleNewSession(session, action) : session
-                    ))
+                sessions: [ {
+                    sessionId: state.sessions.length+1,
+                    startOfSession: date,
+                    endOfSession: '',
+                    deliveriesData: [...action.responseOrders],
+                    allDeliveries: [],
+                    activeDeliveries: [],
+                    finishedDeliveries: []
+                } ,...state.sessions]
             }
 
         case START_NEW_ORDER:

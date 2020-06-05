@@ -18,7 +18,7 @@ function mapDispatchToProps(dispatch) {
         onLogOut: () => dispatch(logOutAC()),
         onStartSession: () => dispatch(startSessionAC()),
         onSetOrdersContent: courierId => dispatch(setOrdersContentAC(courierId)),
-        onFinishSession: () => dispatch(finishSessionAC())
+        onFinishSession: date => dispatch(finishSessionAC(date))
     }
 }
 

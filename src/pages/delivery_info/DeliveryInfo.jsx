@@ -6,7 +6,7 @@ export default function DeliveryInfo({deliveryPage, ...props}) {
     const getSessionDate = () => {
         const finishData = new Date(deliveryPage.orderData);
         const day = finishData.getDate();
-        const month = `0${finishData.getMonth() + 1}`;
+        const month = `${finishData.getMonth() + 1}`;
         const year = finishData.getFullYear();
         return `${day}.${month}.${year}`;
     }

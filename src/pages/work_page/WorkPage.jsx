@@ -8,7 +8,7 @@ export default function WorkPage(props) {
     const getSessionDate = () => {
         const finishData = new Date(props.sessionDate);
         const day = finishData.getDate();
-        const month = `0${finishData.getMonth() + 1}`;
+        const month = `${finishData.getMonth() + 1}`;
         const year = finishData.getFullYear();
         return `${day}.${month}.${year}`;
     }
@@ -31,7 +31,9 @@ export default function WorkPage(props) {
                 onSetTab={props.onSetTab}
             />
             <OrdersList
-                deliveries={props.tab === 0 ? props.deliveries : props.tab === 1 ? props.activeDeliveries : props.finishedDeliveries}
+                deliveries={props.tab === 0 ?
+                    props.deliveries : props.tab === 1 ?
+                        props.activeDeliveries : props.finishedDeliveries}
                 deliveryPageId={props.deliveryPageId}
                 onWatchDelivery={props.onWatchDelivery}
                 use={'WorkPage'}
