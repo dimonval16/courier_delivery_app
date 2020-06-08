@@ -14,7 +14,7 @@ export default function DataList({del}) {
             const takeOrderTime = new Date(deliveryTime - interval)
             const hours = takeOrderTime.getHours();
             const minutes = takeOrderTime.getMinutes();
-            return `${hours}:${minutes}`;
+            return `${hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
         } else {
             const hours = new Date(data).getHours();
             const minutes = new Date(data).getMinutes();

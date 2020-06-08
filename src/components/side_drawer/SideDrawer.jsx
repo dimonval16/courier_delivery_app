@@ -34,7 +34,7 @@ export default function SideDrawer(props) {
                             <ListItem
                                 button
                                 key={index}
-                                onClick={() => props.onLogOut(item.title)}
+                                onClick={() => props.onClick(item.title)}
                             >
                                 <ListItemIcon>
                                     <CustomIcon icon={item.icon}/>

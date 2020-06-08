@@ -18,11 +18,12 @@ export default function DeliveryInfo({deliveryPage, ...props}) {
 
     const handleButtonClick = () => {
         props.onCLearDeliveryInfo();
-
         if (props.use === 'HistoryPage') {
             props.history.push('/courier/history');
         } else if (props.use === 'WorkPage') {
             props.history.push('/courier/orders');
+        } else if (props.use === 'ArchiveDeliveries') {
+            props.history.push('/courier/archivehistory');
         }
     }
 

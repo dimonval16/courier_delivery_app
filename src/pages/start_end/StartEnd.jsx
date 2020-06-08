@@ -14,10 +14,15 @@ export default function StartEnd(props) {
         props.history.push('/courier/history');
     }
 
-    const handleStartButton = (title) => {
+    const handleStartButton = title => {
         props.onStartSession();
         if (title === 'Старт') props.onSetOrdersContent(props.courierId);
         props.history.push('/courier/orders');
+    }
+
+    const handleSideDrawerClick = title => {
+        if (title === 'Выйти') { props.onLogOut() }
+        else if (title === 'Архив') { props.history.push('/courier/archive') }
     }
 
     return (
@@ -31,7 +36,7 @@ export default function StartEnd(props) {
                 username={props.courierName}
                 open={values.isDrawerOpened}
                 onToggleDrawer={() => setValues({...values, isDrawerOpened: false})}
-                onLogOut={title => title === 'Выйти' ? props.onLogOut() : null}
+                onClick={handleSideDrawerClick}
             />
             <div className={s.content}>
                 <Logo/>

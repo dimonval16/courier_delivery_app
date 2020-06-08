@@ -45,7 +45,7 @@ const responseOrders = [
         userPhone: '0963528223',
         userComment: 'Ой хлопці давайте швидше',
         userId: 5474,
-        deliveryTime: '2020-05-25T14:02',
+        deliveryTime: '2020-05-25T14:35',
         deliveryData: '2020-05-25T12:15',
         responsiblePartner: 'id партнера',
         partnerName: 'KFC',

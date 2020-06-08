@@ -7,6 +7,8 @@ import StartEndContainer from './pages/start_end/StartEndContainer';
 import FinishPageContainer from './pages/finish_page/FinishPageContainer';
 import DeliveryInfoContainer from './pages/delivery_info/DeliveryInfoContainer';
 import WorkPageContainer from './pages/work_page/WorkPageContainer';
+import ArchivePageContainer from './pages/archive_page/ArchivePageContainer';
+import ArchiveDeliveriesContainer from './pages/archive_deliveries_page/ArchiveDeliveriesContainer';
 
 const PrivateRoute = ({component: Component, isAuth, ...rest}) => {
     return (
@@ -27,13 +29,10 @@ function AppComponent({isAuth, history, deliveryPageId}) {
                 <Route path={'/courier/signin'} component={Login}/>
                 <PrivateRoute path={'/courier/main'} isAuth={isAuth} component={StartEndContainer}/>
                 <PrivateRoute path={'/courier/history'} isAuth={isAuth} component={FinishPageContainer}/>
-                <PrivateRoute
-                    path={`/courier/order${deliveryPageId}`}
-                    isAuth={isAuth}
-                    component={DeliveryInfoContainer}
-                />
+                <PrivateRoute path={`/courier/order${deliveryPageId}`} isAuth={isAuth} component={DeliveryInfoContainer}/>
                 <PrivateRoute path={'/courier/orders'} isAuth={isAuth} component={WorkPageContainer}/>
-                <Redirect exact from={'/'} to={'/courier/main'}/>
+                <PrivateRoute path={'/courier/archive'} isAuth={isAuth} component={ArchivePageContainer}/>
+                <PrivateRoute path={'/courier/archivehistory'} isAuth={isAuth} component={ArchiveDeliveriesContainer}/>
             </Switch>
         </>
     );

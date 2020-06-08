@@ -35,5 +35,14 @@ export const initialData = {
     },
     workPage: {
         tabStatus: 0
+    },
+    archivePage: {
+        tabStatus: 0,
+        archiveSession: {
+            sessionId: 0,
+            startOfSession: '',
+            endOfSession: '',
+            archiveDeliveries: []
+        }
     }
 }

@@ -31,3 +31,10 @@ export {
     setOrdersContentAC,
     updateOrdersContentAC
 } from './work_page_a/workPageA';
+
+export {
+    SET_ARCHIVE_TAB_STATUS,
+    SET_ARCHIVE_DELIVERIES,
+    setArchiveTabAC,
+    setArchiveDeliveriesAC
+} from './archive_page_a/archivePageA';

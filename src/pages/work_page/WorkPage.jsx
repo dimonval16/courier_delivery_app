@@ -29,6 +29,7 @@ export default function WorkPage(props) {
             <CustomTab
                 tab={props.tab}
                 onSetTab={props.onSetTab}
+                use={'WorkPage'}
             />
             <OrdersList
                 deliveries={props.tab === 0 ?
