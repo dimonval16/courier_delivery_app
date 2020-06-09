@@ -5,8 +5,8 @@ import Footer from '../../components/footer/Footer';
 import CustomTab from '../../components/tabs/CustomTab';
 
 export default function WorkPage(props) {
-    const getSessionDate = () => {
-        const finishData = new Date(props.sessionDate);
+    const getSessionDate = data => {
+        const finishData = new Date(data);
         const day = finishData.getDate();
         const month = `${finishData.getMonth() + 1}`;
         const year = finishData.getFullYear();
@@ -22,7 +22,7 @@ export default function WorkPage(props) {
         <div>
             <HeaderMain
                 title={'Заказы'}
-                rightTitle={getSessionDate()}
+                rightTitle={getSessionDate(props.sessionDate)}
                 anotherIcon={'arrow_back_ios'}
                 onButtonClick={() => props.history.push('/courier/main')}
             />

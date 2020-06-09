@@ -11,13 +11,18 @@ export default function ArchiveDeliveries(props) {
         return `${day}.${month}.${year}`;
     }
 
+    const clearArchiveHistory = () => {
+        props.onClearArchiveDeliveriesPage();
+        props.history.push('/courier/archive');
+    }
+
     return (
         <>
             <HeaderMain
                 title={'История'}
-                rightTitle={getSessionDate(props.endOfSession)}
+                rightTitle={props.endOfSession ? getSessionDate(props.endOfSession) : 'сейчас активна'}
                 anotherIcon={'arrow_back_ios'}
-                onButtonClick={() => props.history.push('/courier/archive')}
+                onButtonClick={clearArchiveHistory}
             />
             <OrdersList
                 deliveries={props.archiveDeliveries}

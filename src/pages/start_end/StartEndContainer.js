@@ -9,7 +9,9 @@ function mapStateToProps(state) {
         drawerItems: state.sideDrawer.items,
         courierName: state.user.name,
         courierId: state.user.id,
-        isSessionActive: state.user.isSessionActive
+        isSessionActive: state.user.isSessionActive,
+        balance: state.user.balance,
+        activeDeliveries: state.user.sessions[0].activeDeliveries
     }
 }
 
@@ -17,7 +19,7 @@ function mapDispatchToProps(dispatch) {
     return {
         onLogOut: () => dispatch(logOutAC()),
         onStartSession: () => dispatch(startSessionAC()),
-        onSetOrdersContent: courierId => dispatch(setOrdersContentAC(courierId)),
+        onSetOrdersContent: (courierId, date) => dispatch(setOrdersContentAC(courierId, date)),
         onFinishSession: date => dispatch(finishSessionAC(date))
     }
 }

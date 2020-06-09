@@ -1,5 +1,10 @@
 export const SET_ARCHIVE_TAB_STATUS = 'SET_ARCHIVE_TAB_STATUS';
 export const SET_ARCHIVE_DELIVERIES = 'SET_ARCHIVE_DELIVERIES';
+export const CLEAR_ARCHIVE_DELIVERIES = 'CLEAR_ARCHIVE_DELIVERIES';
+
+export const clearArchiveDeliveriesAC = () => ({
+   type: CLEAR_ARCHIVE_DELIVERIES
+});
 
 export const setArchiveDeliveriesAC = session => ({
    type: SET_ARCHIVE_DELIVERIES,

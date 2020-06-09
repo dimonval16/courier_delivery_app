@@ -6,6 +6,7 @@ export const initialData = {
     },
     sideDrawer: {
         items: [
+            { title: 'Баланс', icon: 'account_balance_wallet' },
             { title: 'Контакты', icon: 'call' },
             { title: 'Архив', icon: 'archive' },
             { title: 'Выйти', icon: 'exit_to_app' }

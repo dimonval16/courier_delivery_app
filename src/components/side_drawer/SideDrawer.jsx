@@ -39,7 +39,9 @@ export default function SideDrawer(props) {
                                 <ListItemIcon>
                                     <CustomIcon icon={item.icon}/>
                                 </ListItemIcon>
-                                <ListItemText primary={item.title}/>
+                                <ListItemText primary={item.title === 'Баланс' ?
+                                    `${item.title}: ${props.balance} грн` : item.title}
+                                />
                             </ListItem>
                         ))}
                     </List>

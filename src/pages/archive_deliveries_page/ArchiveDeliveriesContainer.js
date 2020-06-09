@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
 import ArchiveDeliveries from './ArchiveDeliveries';
-import {setDeliveryContentAC} from '../../redux/actions/mainA';
+import {clearArchiveDeliveriesAC, setDeliveryContentAC} from '../../redux/actions/mainA';
 
 const mapStateToProps = state => ({
     endOfSession: state.archivePage.archiveSession.endOfSession,
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onWatchDelivery: (del, use) => dispatch(setDeliveryContentAC(del, use))
+    onWatchDelivery: (del, use) => dispatch(setDeliveryContentAC(del, use)),
+    onClearArchiveDeliveriesPage: () => dispatch(clearArchiveDeliveriesAC())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ArchiveDeliveries));

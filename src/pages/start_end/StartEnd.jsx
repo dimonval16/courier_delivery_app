@@ -1,23 +1,44 @@
 import React, {useState} from 'react';
 import s from './StartEnd.module.css';
+import {makeStyles} from '@material-ui/core/styles';
 import HeaderMain from '../../components/headers/HeaderMain';
 import SideDrawer from '../../components/side_drawer/SideDrawer';
 import Logo from '../../components/logo/Logo';
 import MainButton from '../../components/buttons/MainButton';
 
+const useStyles = makeStyles(theme => ({
+    mes: {
+        color: theme.palette.error.main,
+        textAlign: 'center',
+    },
+    mesHid: {
+        display: 'none'
+    }
+}));
+
 export default function StartEnd(props) {
-    const [values, setValues] = useState({isDrawerOpened: false});
+    const sLocal = useStyles();
+
+    const [values, setValues] = useState({isDrawerOpened: false, errorMes: false});
+
+    const handleStartButton = title => {
+        const date = new Date();
+        if (title === 'Старт') {
+            props.onStartSession();
+            props.onSetOrdersContent(props.courierId, date);
+        }
+
+        props.history.push('/courier/orders');
+    }
 
     const handleFinishButton = () => {
         const date = new Date();
-        props.onFinishSession(date);
-        props.history.push('/courier/history');
-    }
-
-    const handleStartButton = title => {
-        props.onStartSession();
-        if (title === 'Старт') props.onSetOrdersContent(props.courierId);
-        props.history.push('/courier/orders');
+        if (props.activeDeliveries.length > 0) {
+            setValues({...values, errorMes: true})
+        } else {
+            props.onFinishSession(date);
+            props.history.push('/courier/history');
+        }
     }
 
     const handleSideDrawerClick = title => {
@@ -34,6 +55,7 @@ export default function StartEnd(props) {
             <SideDrawer
                 items={props.drawerItems}
                 username={props.courierName}
+                balance={props.balance}
                 open={values.isDrawerOpened}
                 onToggleDrawer={() => setValues({...values, isDrawerOpened: false})}
                 onClick={handleSideDrawerClick}
@@ -52,6 +74,9 @@ export default function StartEnd(props) {
                         disabled={!props.isSessionActive}
                         onClick={handleFinishButton}
                     />
+                </div>
+                <div className={values.errorMes ? sLocal.mes : sLocal.mesHid}>
+                    Невозможно завершить сессию. Есть активные заказы.
                 </div>
             </div>
         </div>

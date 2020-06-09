@@ -50,8 +50,10 @@ const ArchiveContent = ({sessions, onWatchHistDeliveries, history}) => {
                 <div key={index}>
                     <ListItem>
                         <ListItemText
-                            primary={getSessionDate(session.endOfSession)}
-                            secondary={getSessionTime(session.startOfSession, session.endOfSession)}
+                            primary={session.endOfSession ?
+                                getSessionDate(session.endOfSession) : 'Дата: сейчас активна'}
+                            secondary={session.endOfSession ?
+                                getSessionTime(session.startOfSession, session.endOfSession) : '...'}
                         />
                         <Button color={'primary'} onClick={() => handleButtonClick(session)}>
                             смотреть

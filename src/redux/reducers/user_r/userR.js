@@ -28,12 +28,11 @@ const reducer = (state = {}, action) => {
             }
 
         case SET_ORDERS_CONTENT:
-            const date = new Date();
             return {
                 ...state,
                 sessions: [ {
                     sessionId: state.sessions.length+1,
-                    startOfSession: date,
+                    startOfSession: action.startData,
                     endOfSession: '',
                     deliveriesData: [...action.responseOrders],
                     allDeliveries: [],

@@ -4,7 +4,8 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
     root: {
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginTop: 40
     }
 });
 

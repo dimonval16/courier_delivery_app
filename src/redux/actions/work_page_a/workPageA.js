@@ -12,11 +12,12 @@ export const updateOrdersContentAC = courierId => {
 }
 
 
-export const setOrdersContentAC = courierId => {
+export const setOrdersContentAC = (courierId, startData) => {
     return {
         type: SET_ORDERS_CONTENT,
         responseOrders,
-        courierId
+        courierId,
+        startData
     }
 }
 

@@ -35,6 +35,8 @@ export {
 export {
     SET_ARCHIVE_TAB_STATUS,
     SET_ARCHIVE_DELIVERIES,
+    CLEAR_ARCHIVE_DELIVERIES,
     setArchiveTabAC,
-    setArchiveDeliveriesAC
+    setArchiveDeliveriesAC,
+    clearArchiveDeliveriesAC
 } from './archive_page_a/archivePageA';
