@@ -2,6 +2,8 @@
 
 This is mobile web application, what help to control and take courier's orders.
 
+Warning! This project is developing now.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
